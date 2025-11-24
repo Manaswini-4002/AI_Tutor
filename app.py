@@ -87,7 +87,7 @@ st.markdown("""
         border: 1px solid #dee2e6;
     }
     .sidebar-light {
-        background-color: #f8f9fa;
+        background-color: #fffffa;
         padding: 1rem;
         border-radius: 8px;
         margin: 0.5rem 0;
@@ -96,7 +96,7 @@ st.markdown("""
     .tab-light {
         background-color: #63ab88;
         padding: 1rem;
-        border-radius: 8px;
+        border-radius: 9px;
         margin: 0.5rem 0;
         border: 1px solid #e9ecef;
     }
@@ -333,7 +333,7 @@ with tab2:
     
     # Display correlation matrix with custom styling
     def style_correlation(val):
-        if abs(val) > 0.7:
+        if abs(val) > 0.5:
             color = 'background-color: #4258c7; color: #155724;'  # Light green
         elif abs(val) > 0.3:
             color = 'background-color:#9c4f6b; color: #856404;'  # Light yellow
@@ -465,3 +465,4 @@ st.markdown("---")
 st.markdown("### 🎓 AI Tutor Pro v2.0")
 
 st.markdown("*Personalized learning powered by machine intelligence*")
+
