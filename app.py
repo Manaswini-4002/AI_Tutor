@@ -87,14 +87,14 @@ st.markdown("""
         border: 1px solid #dee2e6;
     }
     .sidebar-light {
-        background-color: #fffffa;
+        background-color: #ffffff;
         padding: 1rem;
         border-radius: 8px;
         margin: 0.5rem 0;
         border: 1px solid #dee2e6;
     }
     .tab-light {
-        background-color: #63ab88;
+        background-color: #ffffff;
         padding: 1rem;
         border-radius: 9px;
         margin: 0.5rem 0;
@@ -215,7 +215,7 @@ with tab1:
     col1, col2 = st.columns([2, 1])
     
     with col1:
-        if st.button("🚀 Predict Learning Success", use_container_width=True):
+        if st.button("🚀 Predict Learning Success Rate", use_container_width=True):
             with st.spinner('Analyzing learning patterns...'):
                 time.sleep(1.5)
                 prediction = model.predict(input_data)[0]
@@ -260,7 +260,7 @@ with tab1:
                     ]
                 
                 # Confidence meter
-                st.subheader("Confidence Level")
+                st.subheader("Confidence Level Currently")
                 confidence = max(prediction_proba) * 100
                 st.markdown(f"""
                 <div class="progress-bar">
@@ -334,7 +334,7 @@ with tab2:
     # Display correlation matrix with custom styling
     def style_correlation(val):
         if abs(val) > 0.5:
-            color = 'background-color: #4258c7; color: #155724;'  # Light green
+            color = 'background-color: #4fffff; color: #155724;'  # Light green
         elif abs(val) > 0.3:
             color = 'background-color:#9c4f6b; color: #856404;'  # Light yellow
         else:
@@ -361,7 +361,7 @@ with tab3:
             """, unsafe_allow_html=True)
         
         # Learning resources based on learning style
-        st.subheader("📚 Learning Resources")
+        st.subheader("📚 Learning Resources personalized ")
         resources = {
             "Visual": ["📊 Interactive diagrams", "🎥 Video explanations", "📈 Graph-based learning"],
             "Auditory": ["🎧 Podcast lessons", "🔊 Audio explanations", "👥 Group discussions"],
@@ -378,7 +378,7 @@ with tab3:
             """, unsafe_allow_html=True)
             
         # Study tips based on metrics
-        st.subheader("🎓 Study Tips")
+        st.subheader("🎓 Study Tips!")
         tips = []
         if ability < 0.4:
             tips.append("💡 Focus on building foundational knowledge with step-by-step tutorials")
@@ -433,7 +433,7 @@ with tab4:
 # Student History
 st.sidebar.markdown("---")
 st.sidebar.markdown('<div class="sidebar-light">', unsafe_allow_html=True)
-st.sidebar.subheader("📋 Prediction History")
+st.sidebar.subheader("📋 Prediction History:")
 if st.session_state.student_history:
     for i, record in enumerate(st.session_state.student_history[-3:]):  # Show last 3
         status = "✅ Success" if record['prediction'] == 1 else "❌ Needs Support"
@@ -465,4 +465,5 @@ st.markdown("---")
 st.markdown("### 🎓 AI Tutor Pro v2.0")
 
 st.markdown("*Personalized learning powered by machine intelligence*")
+
 
